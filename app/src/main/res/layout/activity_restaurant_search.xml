@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RestaurantSearchActivity">
+
+    <androidx.cardview.widget.CardView
+        android:elevation="1dp"
+        android:outlineAmbientShadowColor="@color/colorPrimary"
+        android:outlineSpotShadowColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:src="@drawable/current_location"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <AutoCompleteTextView
+                android:textColor="@color/smoothblack"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:background="@color/float_transparent"
+                android:layout_weight="1"
+                android:id="@+id/address"
+                android:hint="Enter your location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/gpsicon"
+                app:lottie_loop="true"
+                app:lottie_scale="2"
+                android:onClick="getCurrentLocation"
+                app:lottie_autoPlay="true"
+                android:layout_centerInParent="true"
+                app:lottie_rawRes="@raw/gps_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+<!--            app:font_path="font/2.ttf"-->
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        android:id="@+id/searchbar"
+        android:layout_width="match_parent"
+        android:outlineAmbientShadowColor="@color/colorPrimary"
+        android:outlineSpotShadowColor="@color/colorPrimary"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_margin="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:padding="5dp"
+                android:layout_margin="3dp"
+                android:src="@drawable/ic_search_black_24dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
+            <com.koonat.easyfont.EditText
+                app:font_path="font/5.ttf"
+                android:hint="Search for restaurants"
+                android:singleLine="true"
+                android:layout_marginLeft="6dp"
+                android:layout_gravity="center_vertical"
+                android:background="#00112233"
+                android:id="@+id/search"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
