@@ -5,4 +5,5 @@
     <color name="colorAccent">#FEE4AB</color>
     <color name="smoothblack">#292929</color>
     <color name="smoothwhite">#FFFAF8F3</color>
+    <color name="float_transparent">#00112223</color>
 </resources>
